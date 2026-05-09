@@ -46,10 +46,16 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/impala-psa-logo.png')" }}></div>
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-[#FF1A1A]/20 via-transparent to-transparent"></div>
         <div className="relative z-10 text-center px-6">
-          <div className="mb-6"></div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="mb-6"
+          >
+            <img src="/impala-psa-logo.png" alt="Impala PSA" className="w-full max-w-2xl mx-auto" />
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
