@@ -34,7 +34,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold tracking-wider">IMPALA</div>
+          <img src="/impala-psa-logo.png" alt="Impala PSA" className="h-10 w-auto" />
           <div className="hidden md:flex space-x-8 tracking-wide">
             <a href="#listen" className="hover:text-[#FF1A1A] transition-colors">Listen</a>
             <a href="#merch" className="hover:text-[#FF1A1A] transition-colors">Merch</a>
@@ -49,15 +49,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-radial from-[#FF1A1A]/20 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
         <div className="relative z-10 text-center px-6">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-6xl md:text-8xl tracking-widest mb-6"
-            style={{ fontFamily: 'var(--font-permanent-marker)' }}
+            className="mb-6"
           >
-            Impala PSA
-          </motion.h1>
+            <img src="/impala-psa-logo.png" alt="Impala PSA" className="w-full max-w-2xl mx-auto" />
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
