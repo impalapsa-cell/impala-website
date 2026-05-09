@@ -130,11 +130,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { name: 'Spotify', icon: '🎵', url: '#' },
+              { name: 'Spotify', icon: '🎵', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
               { name: 'Apple Music', icon: '🍎', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
               { name: 'YouTube', icon: '▶️', url: '#' },
               { name: 'Amazon', icon: '📦', url: '#' },
-              { name: 'Tidal', icon: '🌊', url: '#' }
+              { name: 'Tidal', icon: '🌊', url: 'https://tidal.com/artist/65332028/u' }
             ].map((platform, index) => (
               <motion.a
                 key={platform.name}
