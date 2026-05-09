@@ -143,7 +143,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-8 text-center hover:bg-white/10 transition-colors cursor-pointer block w-40"
+                className="bg-white/5 border border-white/10 rounded-lg p-12 text-center hover:bg-white/10 transition-colors cursor-pointer block w-56"
               >
                 <div className="text-4xl mb-4">{platform.icon}</div>
                 <div className="font-semibold tracking-wide">{platform.name}</div>
