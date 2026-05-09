@@ -130,23 +130,26 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { name: 'Spotify', icon: '🎵' },
-              { name: 'Apple Music', icon: '🍎' },
-              { name: 'YouTube', icon: '▶️' },
-              { name: 'Amazon', icon: '📦' },
-              { name: 'Tidal', icon: '🌊' }
+              { name: 'Spotify', icon: '🎵', url: '#' },
+              { name: 'Apple Music', icon: '🍎', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
+              { name: 'YouTube', icon: '▶️', url: '#' },
+              { name: 'Amazon', icon: '📦', url: '#' },
+              { name: 'Tidal', icon: '🌊', url: '#' }
             ].map((platform, index) => (
-              <motion.div
+              <motion.a
                 key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-8 text-center hover:bg-white/10 transition-colors cursor-pointer"
+                className="bg-white/5 border border-white/10 rounded-lg p-8 text-center hover:bg-white/10 transition-colors cursor-pointer block"
               >
                 <div className="text-4xl mb-4">{platform.icon}</div>
                 <div className="font-semibold tracking-wide">{platform.name}</div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
