@@ -128,7 +128,7 @@ export default function Home() {
       <section id="listen" className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {[
               { name: 'Spotify', icon: '🎵', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
               { name: 'Apple Music', icon: '🍎', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
