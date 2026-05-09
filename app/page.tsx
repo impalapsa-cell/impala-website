@@ -47,7 +47,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-radial from-[#FF1A1A]/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')" }}></div>
+        <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: '75%' }}></div>
         <div className="relative z-10 text-center px-6">
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
