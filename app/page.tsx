@@ -49,13 +49,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-radial from-[#FF1A1A]/20 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
         <div className="relative z-10 text-center px-6">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-6xl md:text-8xl font-black tracking-widest mb-6"
+            className="text-6xl md:text-8xl tracking-widest mb-6"
+            style={{ fontFamily: 'var(--font-permanent-marker)' }}
           >
-            IMPALA
+            Impala PSA
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
