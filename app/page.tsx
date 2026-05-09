@@ -47,7 +47,6 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-radial from-[#FF1A1A]/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
         <div className="relative z-10 text-center px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -125,8 +124,9 @@ export default function Home() {
       </section>
 
       {/* Listen Section */}
-      <section id="listen" className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto">
+      <section id="listen" className="relative py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
+        <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
+        <div className="relative max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
           <div className="flex flex-wrap justify-center gap-6">
             {[
