@@ -132,7 +132,7 @@ export default function Home() {
             {[
               { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
               { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
-              { name: 'Tidal', logo: '/tidal-logo.svg', url: 'https://tidal.com/artist/65332028/u' }
+              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
             ].map((platform, index) => (
               <motion.a
                 key={platform.name}
