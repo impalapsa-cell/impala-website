@@ -130,9 +130,9 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { name: 'Spotify', icon: '🎵', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
-              { name: 'Apple Music', icon: '🍎', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
-              { name: 'Tidal', icon: '🌊', url: 'https://tidal.com/artist/65332028/u' }
+              { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
+              { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
+              { name: 'Tidal', logo: '/tidal-logo.svg', url: 'https://tidal.com/artist/65332028/u' }
             ].map((platform, index) => (
               <motion.a
                 key={platform.name}
@@ -145,7 +145,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white/5 border border-white/10 rounded-lg p-12 text-center hover:bg-white/10 transition-colors cursor-pointer block w-56"
               >
-                <div className="text-4xl mb-4">{platform.icon}</div>
+                <img src={platform.logo} alt={platform.name} className="w-16 h-16 mb-4 mx-auto" />
                 <div className="font-semibold tracking-wide">{platform.name}</div>
               </motion.a>
             ))}
