@@ -145,7 +145,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white/5 border border-white/10 rounded-lg p-12 text-center hover:bg-white/10 transition-colors cursor-pointer block w-56"
               >
-                <img src={platform.logo} alt={platform.name} className="w-24 h-24 mb-5 mx-auto" />
+                <img src={platform.logo} alt={platform.name} className="h-16 w-auto max-w-[10rem] mb-5 mx-auto object-contain" />
                 <div className="text-xl font-semibold tracking-wide">{platform.name}</div>
               </motion.a>
             ))}
