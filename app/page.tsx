@@ -1,34 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 12,
-    hours: 8,
-    minutes: 34,
-    seconds: 51
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        const totalSeconds = prev.days * 86400 + prev.hours * 3600 + prev.minutes * 60 + prev.seconds - 1;
-        if (totalSeconds <= 0) return prev;
-        
-        return {
-          days: Math.floor(totalSeconds / 86400),
-          hours: Math.floor((totalSeconds % 86400) / 3600),
-          minutes: Math.floor((totalSeconds % 3600) / 60),
-          seconds: totalSeconds % 60
-        };
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Navigation */}
@@ -94,31 +68,40 @@ export default function Home() {
             </motion.button>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="border border-white/20 rounded-lg p-6 max-w-md mx-auto"
+        </div>
+      </section>
+
+      {/* Coming Soon Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-4"
           >
-            <p className="text-sm text-gray-400 mb-4 tracking-wide">NEW MUSIC DROPS IN</p>
-            <div className="grid grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-3xl font-bold">{String(timeLeft.days).padStart(2, '0')}</div>
-                <div className="text-xs text-gray-500">DAYS</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">{String(timeLeft.hours).padStart(2, '0')}</div>
-                <div className="text-xs text-gray-500">HOURS</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                <div className="text-xs text-gray-500">MIN</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                <div className="text-xs text-gray-500">SEC</div>
-              </div>
-            </div>
+            Coming Soon
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-6xl font-bold tracking-wider mb-12"
+          >
+            New Single
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative inline-block"
+          >
+            <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+            <img
+              src="/whole-lotta-hundreds.png"
+              alt="Whole Lotta Hundreds — Impala x Fatboi Blac"
+              className="relative rounded-xl w-full max-w-lg mx-auto shadow-2xl"
+            />
           </motion.div>
         </div>
       </section>
