@@ -90,19 +90,34 @@ export default function Home() {
           >
             New Single
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative inline-block"
-          >
-            <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-            <img
-              src="/whole-lotta-hundreds.png"
-              alt="Whole Lotta Hundreds — Impala x Fatboi Blac"
-              className="relative rounded-xl w-full max-w-lg mx-auto shadow-2xl"
-            />
-          </motion.div>
+          <div className="flex flex-col sm:flex-row justify-center gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+              <img
+                src="/its-whateva.png"
+                alt="It's Whateva — Impala PSA"
+                className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+              <img
+                src="/whole-lotta-hundreds.png"
+                alt="Whole Lotta Hundreds — Impala x Fatboi Blac"
+                className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
