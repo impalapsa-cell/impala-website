@@ -233,7 +233,7 @@ export default function Home() {
       <footer className="py-8 px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-500 text-sm tracking-wide">
-            2024 IMPALA. All rights reserved.
+            2026 IMPALA. All rights reserved.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {['Instagram', 'TikTok', 'YouTube', 'X'].map((social) => (
