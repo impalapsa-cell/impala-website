@@ -153,32 +153,40 @@ export default function Home() {
 
       {/* Merch Section */}
       <section id="merch" className="py-20 px-6 bg-gradient-to-b from-[#0a0a0a] to-black">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">MERCH</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-4"
+          >
+            Coming Soon
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold tracking-wider mb-12"
+          >
+            MERCH
+          </motion.h2>
+          <div className="flex flex-col sm:flex-row justify-center gap-8 items-start">
             {[
-              { name: 'Impala Tour Hoodie', price: '$65', badge: 'LIMITED EDITION' },
-              { name: 'Signed Vinyl Bundle', price: '$45', badge: 'EXCLUSIVE' },
-              { name: 'Impala Logo Tee', price: '$35', badge: 'LIMITED EDITION' }
+              { src: '/merch-impala-psa-tee.png', alt: 'Impala PSA Tee' },
+              { src: '/merch-psa-tee.png', alt: 'Pure South Affiliated Tee' },
             ].map((item, index) => (
               <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:bg-white/10 transition-colors cursor-pointer"
+                key={item.alt}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="w-full max-w-sm mx-auto"
               >
-                <div className="h-48 bg-gradient-to-br from-[#FF1A1A]/20 to-transparent flex items-center justify-center">
-                  <div className="text-6xl">🎤</div>
-                </div>
-                <div className="p-6">
-                  <div className="inline-block bg-[#FF1A1A] text-white text-xs px-3 py-1 rounded-full mb-3 tracking-wide">
-                    {item.badge}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 tracking-wide">{item.name}</h3>
-                  <div className="text-2xl font-bold text-[#FF1A1A]">{item.price}</div>
-                </div>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="rounded-xl w-full shadow-2xl"
+                />
               </motion.div>
             ))}
           </div>
