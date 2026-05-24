@@ -88,7 +88,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold tracking-wider mb-12"
           >
-            New Single
+            New Singles
           </motion.h2>
           <div className="flex flex-col sm:flex-row justify-center gap-8 items-center">
             <motion.div
