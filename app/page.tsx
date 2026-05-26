@@ -71,6 +71,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Listen Section */}
+      <section id="listen" className="relative py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
+        <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
+        <div className="relative max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
+              { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
+              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
+            ].map((platform, index) => (
+              <motion.a
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-12 text-center hover:bg-white/10 transition-colors cursor-pointer block w-56"
+              >
+                <img src={platform.logo} alt={platform.name} className="w-24 h-24 mb-5 mx-auto object-contain" />
+                <div className="text-xl font-semibold tracking-wide">{platform.name}</div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Coming Soon Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-5xl mx-auto text-center">
@@ -117,36 +147,6 @@ export default function Home() {
                 className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
               />
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Listen Section */}
-      <section id="listen" className="relative py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
-        <div className="absolute inset-0 bg-no-repeat bg-center opacity-10" style={{ backgroundImage: "url('/psa-logo.png')", backgroundSize: 'contain' }}></div>
-        <div className="relative max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-wider">LISTEN</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            {[
-              { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
-              { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
-              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
-            ].map((platform, index) => (
-              <motion.a
-                key={platform.name}
-                href={platform.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-12 text-center hover:bg-white/10 transition-colors cursor-pointer block w-56"
-              >
-                <img src={platform.logo} alt={platform.name} className="w-24 h-24 mb-5 mx-auto object-contain" />
-                <div className="text-xl font-semibold tracking-wide">{platform.name}</div>
-              </motion.a>
-            ))}
           </div>
         </div>
       </section>
