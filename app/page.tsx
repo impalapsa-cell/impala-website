@@ -130,7 +130,7 @@ export default function Home() {
           >
             New Singles
           </motion.h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-8 items-center">
+          <div className="flex flex-col justify-center gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
