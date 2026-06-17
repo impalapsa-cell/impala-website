@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  function toggleMute() {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setMuted(videoRef.current.muted);
+    }
+  }
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Navigation */}
@@ -128,14 +138,24 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-              <video
-                src="/its-whateva.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
-              />
+              <div className="relative">
+                <video
+                  ref={videoRef}
+                  src="/its-whateva.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="rounded-xl w-full max-w-sm mx-auto shadow-2xl block"
+                />
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-3 right-3 bg-black/60 hover:bg-black/80 text-white rounded-full w-9 h-9 flex items-center justify-center text-lg transition-colors"
+                  aria-label={muted ? 'Unmute' : 'Mute'}
+                >
+                  {muted ? '🔇' : '🔊'}
+                </button>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
