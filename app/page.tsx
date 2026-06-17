@@ -129,7 +129,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
               <video
-                src="/its-whateva.mov"
+                src="/its-whateva.mp4"
                 autoPlay
                 loop
                 muted
