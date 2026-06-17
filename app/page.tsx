@@ -128,9 +128,12 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-              <img
-                src="/its-whateva.png"
-                alt="It's Whateva — Impala PSA"
+              <video
+                src="/its-whateva.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
               />
             </motion.div>
