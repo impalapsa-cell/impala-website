@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const beehiivContainerRef = useRef<HTMLDivElement>(null);
 
   function toggleMute() {
     if (videoRef.current) {
@@ -13,6 +14,19 @@ export default function Home() {
       setMuted(videoRef.current.muted);
     }
   }
+
+  useEffect(() => {
+    const container = beehiivContainerRef.current;
+    if (!container) return;
+    const script = document.createElement('script');
+    script.src = 'https://subscribe-forms.beehiiv.com/v3/loader.js';
+    script.async = true;
+    script.setAttribute('data-beehiiv-form', process.env.NEXT_PUBLIC_BEEHIIV_FORM_ID || '');
+    container.appendChild(script);
+    return () => {
+      container.innerHTML = '';
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Navigation */}
@@ -232,22 +246,7 @@ export default function Home() {
       {/* Email Capture */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-wider">Get Exclusives First</h2>
-          <p className="text-gray-400 mb-8 text-lg tracking-wide">Join the inner circle. Never miss a drop.</p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF1A1A] transition-colors"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#FF1A1A] text-white px-8 py-4 rounded-full font-semibold tracking-wide hover:bg-[#FF3333] transition-colors"
-            >
-              Join Now
-            </motion.button>
-          </div>
+          <div ref={beehiivContainerRef} className="max-w-md mx-auto" />
         </div>
       </section>
 
