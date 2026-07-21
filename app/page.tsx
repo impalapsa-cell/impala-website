@@ -113,7 +113,9 @@ export default function Home() {
             {[
               { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
               { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
-              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
+              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' },
+              { name: 'Amazon Music', logo: '/amazon-music-logo.png', url: 'https://music.amazon.com/artists/B0FMD9N3T1/impalapsa?ref=dm_sh_tFRrvT5KkoUA7oPV5NTjpWFvd&referrer=dm_sh_messages' },
+              { name: 'YouTube Music', logo: '/youtube-music-logo.svg', url: 'https://music.youtube.com/channel/UCaiSWMPu9vZLYGZbI4bRtwg?si=pdpSAvOOrVt9zlLg' }
             ].map((platform, index) => (
               <motion.a
                 key={platform.name}
@@ -183,7 +185,9 @@ export default function Home() {
             {[
               { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
               { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
-              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
+              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' },
+              { name: 'Amazon Music', logo: '/amazon-music-logo.png', url: 'https://music.amazon.com/artists/B0FMD9N3T1/impalapsa?ref=dm_sh_tFRrvT5KkoUA7oPV5NTjpWFvd&referrer=dm_sh_messages' },
+              { name: 'YouTube Music', logo: '/youtube-music-logo.svg', url: 'https://music.youtube.com/channel/UCaiSWMPu9vZLYGZbI4bRtwg?si=pdpSAvOOrVt9zlLg' }
             ].map((platform, index) => (
               <motion.a
                 key={platform.name}
