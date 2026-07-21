@@ -4,18 +4,9 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
   const outNowVideoRef = useRef<HTMLVideoElement>(null);
   const [outNowMuted, setOutNowMuted] = useState(true);
   const beehiivContainerRef = useRef<HTMLDivElement>(null);
-
-  function toggleMute() {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setMuted(videoRef.current.muted);
-    }
-  }
 
   function toggleOutNowMute() {
     if (outNowVideoRef.current) {
@@ -208,66 +199,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Coming Soon Section */}
+      {/* Album Coming Soon Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-5xl mx-auto text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-4"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Coming Soon
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold tracking-wider mb-12"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-6"
+            >
+              Album Coming Soon
+            </motion.p>
+            <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+            <img
+              src="/its-whateva-album-poster.png"
+              alt="It's Whateva — Album Coming Soon"
+              className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* New Single Coming Soon Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-[#0a0a0a] to-black">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            New Singles
-          </motion.h2>
-          <div className="flex flex-col justify-center gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="relative"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-6"
             >
-              <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-              <div className="relative">
-                <video
-                  ref={videoRef}
-                  src="/its-whateva.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="rounded-xl w-full max-w-sm mx-auto shadow-2xl block"
-                />
-                <button
-                  onClick={toggleMute}
-                  className="absolute bottom-3 right-3 bg-black/60 hover:bg-black/80 text-white rounded-full w-9 h-9 flex items-center justify-center text-lg transition-colors"
-                  aria-label={muted ? 'Unmute' : 'Mute'}
-                >
-                  {muted ? '🔇' : '🔊'}
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-              <img
-                src="/whole-lotta-hundreds.png"
-                alt="Whole Lotta Hundreds — Impala x Fatboi Blac"
-                className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
-              />
-            </motion.div>
-          </div>
+              New Single Coming Soon
+            </motion.p>
+            <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+            <img
+              src="/whole-lotta-hundreds.png"
+              alt="Whole Lotta Hundreds — Impala x Fatboi Blac"
+              className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
+            />
+          </motion.div>
         </div>
       </section>
 
