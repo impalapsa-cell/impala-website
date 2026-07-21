@@ -6,12 +6,21 @@ import { useEffect, useRef, useState } from 'react';
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const outNowVideoRef = useRef<HTMLVideoElement>(null);
+  const [outNowMuted, setOutNowMuted] = useState(true);
   const beehiivContainerRef = useRef<HTMLDivElement>(null);
 
   function toggleMute() {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setMuted(videoRef.current.muted);
+    }
+  }
+
+  function toggleOutNowMute() {
+    if (outNowVideoRef.current) {
+      outNowVideoRef.current.muted = !outNowVideoRef.current.muted;
+      setOutNowMuted(outNowVideoRef.current.muted);
     }
   }
 
@@ -125,6 +134,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Out Now Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-[#FF1A1A] text-sm tracking-[0.3em] uppercase font-semibold mb-4"
+          >
+            Out Now
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-6xl font-bold tracking-wider mb-12"
+          >
+            ImpalaPSA — Baylor
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mb-12"
+          >
+            <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
+            <div className="relative">
+              <video
+                ref={outNowVideoRef}
+                src="/baylor-out-now.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="rounded-xl w-full max-w-sm mx-auto shadow-2xl block"
+              />
+              <button
+                onClick={toggleOutNowMute}
+                className="absolute bottom-3 right-3 bg-black/60 hover:bg-black/80 text-white rounded-full w-9 h-9 flex items-center justify-center text-lg transition-colors"
+                aria-label={outNowMuted ? 'Unmute' : 'Mute'}
+              >
+                {outNowMuted ? '🔇' : '🔊'}
+              </button>
+            </div>
+          </motion.div>
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { name: 'Spotify', logo: '/spotify-logo.svg', url: 'https://open.spotify.com/artist/1Bph7foBtTQRt0qyDM256v?si=X-JJ2PcKQheH4NuMyNuooQ' },
+              { name: 'Apple Music', logo: '/apple-music-logo.svg', url: 'https://music.apple.com/us/artist/impalapsa/1833136321' },
+              { name: 'Tidal', logo: '/tidal-icon.svg', url: 'https://tidal.com/artist/65332028/u' }
+            ].map((platform, index) => (
+              <motion.a
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1 }}
+                className="bg-white/5 border border-white/10 rounded-full p-4 hover:bg-white/10 transition-colors cursor-pointer block"
+                aria-label={`Listen to Baylor on ${platform.name}`}
+              >
+                <img src={platform.logo} alt={platform.name} className="w-10 h-10 object-contain" />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Coming Soon Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-5xl mx-auto text-center">
@@ -145,19 +224,6 @@ export default function Home() {
             New Singles
           </motion.h2>
           <div className="flex flex-col justify-center gap-8 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 rounded-xl bg-[#FF1A1A]/20 blur-2xl scale-105"></div>
-              <img
-                src="/baylor.png"
-                alt="Baylor — Pure South Affiliated"
-                className="relative rounded-xl w-full max-w-sm mx-auto shadow-2xl"
-              />
-            </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
